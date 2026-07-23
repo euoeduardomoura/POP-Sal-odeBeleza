@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+  body{margin:0;background:#f6efe2;}
+  a{color:#8a6a1f;}
+  a:hover{color:#c9a24d;}
+</style>
+</helmet>
+
+<div style="font-family:'Inter',sans-serif;background:#f6efe2;color:#201f16;width:100%;overflow:hidden;">
+
+  <!-- NAV -->
+  <div style="background:#23261a;padding:18px 6vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+    <img src="assets/logo-ms.png" alt="Mônica Sanseverino - Advocacia Estratégica" style="height:44px;width:auto;">
+    <a href="https://pay.kiwify.com.br/cHtF8x8" style="text-decoration:none;background:#c9a24d;color:#23261a;font-weight:700;font-size:13px;letter-spacing:0.04em;padding:12px 22px;border-radius:999px;white-space:nowrap;">QUERO BLINDAR MEU SALÃO</a>
+  </div>
+
+  <!-- HERO -->
+  <div style="max-width:1200px;margin:0 auto;padding:0 0 40px;">
+    <img src="assets/hero-cover.png" alt="POP Salão de Beleza - e-book completo" style="width:100%;height:auto;display:block;">
+    <div style="display:flex;justify-content:center;margin-top:32px;">
+      <a href="https://pay.kiwify.com.br/cHtF8x8" style="text-decoration:none;background:#c9a24d;color:#23261a;font-weight:800;font-size:15px;letter-spacing:0.03em;padding:18px 38px;border-radius:999px;box-shadow:0 10px 24px rgba(201,162,77,0.35);">QUERO PROTEGER MEU SALÃO AGORA</a>
+    </div>
+  </div>
+
+  <!-- PROBLEM -->
+  <div style="max-width:1200px;margin:0 auto;padding:70px 6vw;">
+    <div style="text-align:center;max-width:760px;margin:0 auto 44px;">
+      <h2 style="font-family:'Playfair Display',serif;font-size:38px;line-height:1.2;margin:0 0 18px;">{{ tituloDor }}</h2>
+      <p style="font-size:16px;color:#6b6a5c;margin:0;">Você provavelmente já viveu isso:</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px 20px;">
+      <sc-for list="{{ problemas }}" as="item" hint-placeholder-count="6">
+        <div style="background:#fff;border-radius:14px;padding:18px 20px;display:flex;align-items:flex-start;gap:14px;box-shadow:0 2px 10px rgba(35,38,26,0.06);">
+          <span style="flex:none;width:26px;height:26px;border-radius:6px;background:#d64545;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;">✕</span>
+          <span style="font-size:15px;line-height:1.5;color:#2a2a1f;">{{ item }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- SOLUTION INTRO -->
+  <div style="background:#23261a;padding:80px 6vw;text-align:center;">
+    <p style="font-family:'Playfair Display',serif;font-size:26px;color:#f6efe2;margin:0 0 6px;">É exatamente aí que entra o</p>
+    <h2 style="font-family:'Playfair Display',serif;font-size:52px;color:#c9a24d;margin:0 0 6px;letter-spacing:0.02em;">POP Salão de Beleza</h2>
+    <p style="font-size:15px;color:#d8ceb0;letter-spacing:0.15em;margin:0 0 26px;text-transform:uppercase;">Por Mônica Sanseverino — Advocacia Estratégica</p>
+    <p style="max-width:720px;margin:0 auto 50px;font-size:16px;line-height:1.7;color:#cfc6ad;">Um material jurídico prático e pronto para aplicar, sem depender de ninguém. Criado por advogada especialista em Direito Trabalhista e Empresarial para donos e gestores de salões de beleza, clínicas de estética e espaços de bem-estar.</p>
+
+    <div style="display:flex;gap:20px;flex-wrap:nowrap;justify-content:center;max-width:1180px;margin:0 auto;">
+      <sc-for list="{{ pilares }}" as="item" hint-placeholder-count="4">
+        <div style="background:#2f331f;border-radius:14px;padding:32px 18px;flex:1 1 0;min-width:0;text-align:center;border-top:3px solid #c9a24d;">
+          <div style="width:56px;height:56px;border-radius:50%;background:linear-gradient(180deg,#e3c98a,#a9823c);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:22px;color:#23261a;font-weight:800;">{{ item.glifo }}</div>
+          <p style="font-size:14px;line-height:1.6;color:#e4dcc4;margin:0;">{{ item.texto }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- ALEM DO KIT -->
+  <div style="max-width:1200px;margin:0 auto;padding:80px 6vw;display:flex;gap:60px;flex-wrap:wrap;">
+    <div style="flex:1 1 380px;">
+      <h2 style="font-family:'Playfair Display',serif;font-size:34px;line-height:1.25;margin:0 0 22px;">O POP Salão de Beleza vai muito além de um kit de modelos prontos</h2>
+      <p style="font-size:16px;line-height:1.7;color:#55584a;margin:0 0 16px;">Enquanto outros materiais ensinam teoria genérica e deixam você montando tudo sozinho...</p>
+      <p style="font-size:16px;line-height:1.7;color:#55584a;margin:0 0 16px;">O POP Salão de Beleza entrega documentos específicos, prontos para uso imediato.</p>
+      <p style="font-size:16px;line-height:1.7;color:#55584a;margin:0;">Você não precisa redigir nada do zero — é só preencher os dados e aplicar com segurança jurídica.</p>
+    </div>
+    <div style="flex:1 1 420px;">
+      <p style="font-size:15px;font-weight:600;color:#23261a;margin:0 0 16px;">Modelos e orientações pensadas para situações reais do dia a dia do seu salão, como:</p>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <sc-for list="{{ cenarios }}" as="item" hint-placeholder-count="4">
+          <div style="background:#fff;border-radius:14px;padding:18px 20px;display:flex;align-items:flex-start;gap:14px;box-shadow:0 2px 10px rgba(35,38,26,0.06);">
+            <span style="flex:none;width:26px;height:26px;border-radius:6px;background:#2e9e6b;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;">✓</span>
+            <span style="font-size:15px;line-height:1.5;color:#2a2a1f;">{{ item }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUMARIO -->
+  <div style="background:#23261a;padding:80px 6vw;">
+    <div style="max-width:900px;margin:0 auto;">
+      <p style="text-align:center;color:#c9a24d;letter-spacing:0.15em;font-size:13px;font-weight:700;margin:0 0 10px;">28 PÁGINAS DE CONTEÚDO APLICÁVEL</p>
+      <h2 style="font-family:'Playfair Display',serif;font-size:34px;text-align:center;color:#f6efe2;margin:0 0 40px;">O que você recebe dentro do POP Salão de Beleza</h2>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;">
+        <sc-for list="{{ sumario }}" as="item" hint-placeholder-count="10">
+          <div style="display:flex;align-items:center;gap:14px;background:#2f331f;border-radius:12px;padding:16px 18px;">
+            <span style="flex:none;width:30px;height:30px;border-radius:50%;background:#c9a24d;color:#23261a;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;">{{ item.numero }}</span>
+            <span style="font-size:14px;line-height:1.4;color:#e4dcc4;">{{ item.texto }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPARISON -->
+  <div style="background:#efe6d4;padding:80px 6vw;">
+    <h2 style="font-family:'Playfair Display',serif;font-size:34px;text-align:center;margin:0 0 40px;">Veja a diferença</h2>
+    <div style="max-width:920px;margin:0 auto;display:flex;gap:22px;flex-wrap:wrap;">
+      <div style="flex:1 1 380px;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 18px rgba(35,38,26,0.08);">
+        <div style="background:#c65a5a;color:#fff;font-weight:700;font-size:16px;text-align:center;padding:16px;">Materiais genéricos</div>
+        <sc-for list="{{ contras }}" as="item" hint-placeholder-count="4">
+          <div style="padding:16px 22px;border-bottom:1px solid #f1e4e4;background:#fbeeee;display:flex;gap:12px;align-items:flex-start;">
+            <span style="color:#c65a5a;font-weight:800;">✕</span><span style="font-size:14px;color:#4a3f3f;line-height:1.5;">{{ item }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <div style="flex:1 1 380px;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 18px rgba(35,38,26,0.08);">
+        <div style="background:#2e9e6b;color:#fff;font-weight:700;font-size:16px;text-align:center;padding:16px;">POP Salão de Beleza</div>
+        <sc-for list="{{ prosItems }}" as="item" hint-placeholder-count="4">
+          <div style="padding:16px 22px;border-bottom:1px solid #e6f3ec;background:#f0faf4;display:flex;gap:12px;align-items:flex-start;">
+            <span style="color:#2e9e6b;font-weight:800;">✓</span><span style="font-size:14px;color:#2a3f34;line-height:1.5;">{{ item }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHOTO STRIP -->
+  <div style="max-width:1200px;margin:0 auto;padding:80px 6vw;">
+    <h2 style="font-family:'Playfair Display',serif;font-size:32px;text-align:center;margin:0 0 40px;">Uma advogada que entende a rotina do seu negócio</h2>
+    <div style="display:flex;gap:20px;flex-wrap:wrap;justify-content:center;">
+      <img src="assets/foto-nutri.png" alt="Mônica Sanseverino trabalhando" style="width:220px;height:auto;border-radius:16px;object-fit:cover;box-shadow:0 8px 24px rgba(35,38,26,0.12);">
+      <img src="assets/foto-laptop.png" alt="Mônica Sanseverino" style="width:340px;height:auto;border-radius:16px;object-fit:cover;box-shadow:0 8px 24px rgba(35,38,26,0.12);">
+      <img src="assets/foto-writing.png" alt="Mônica Sanseverino revisando documentos" style="width:220px;height:auto;border-radius:16px;object-fit:cover;box-shadow:0 8px 24px rgba(35,38,26,0.12);">
+    </div>
+  </div>
+
+  <!-- VALUE STACK -->
+  <div style="background:#efe6d4;padding:80px 6vw;">
+    <h2 style="font-family:'Playfair Display',serif;font-size:34px;text-align:center;margin:0 0 40px;color:#201f16;">Faça a conta do que você leva</h2>
+    <div style="max-width:520px;margin:0 auto;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 20px 50px rgba(35,38,26,0.15);">
+      <div style="display:flex;flex-direction:column;">
+        <sc-for list="{{ valorItens }}" as="item" hint-placeholder-count="4">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 26px;border-bottom:1px solid #efe6d4;">
+            <span style="font-size:15px;color:#2a2a1f;">{{ item.nome }}</span>
+            <span style="font-size:14px;color:#a89b78;text-decoration:line-through;white-space:nowrap;">{{ item.valor }}</span>
+          </div>
+        </sc-for>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 26px;background:#f6efe2;">
+          <span style="font-size:14px;font-weight:700;color:#201f16;">Comprando separado</span>
+          <span style="font-size:16px;font-weight:800;color:#8a6a1f;text-decoration:line-through;white-space:nowrap;">R$ 97,00</span>
+        </div>
+      </div>
+      <div style="background:#23261a;padding:36px 30px;text-align:center;">
+        <p style="font-size:14px;color:#cfc6ad;margin:0 0 10px;">Na oferta de lançamento, não vai ser R$ 97,00</p>
+        <p style="font-family:'Playfair Display',serif;font-size:46px;font-weight:700;color:#fff;margin:0 0 6px;">R$ 47,00</p>
+        <p style="font-size:13px;color:#a9a48c;margin:0 0 26px;">à vista no Pix ou cartão</p>
+        <a href="https://pay.kiwify.com.br/cHtF8x8" style="display:block;text-decoration:none;background:#c9a24d;color:#23261a;font-weight:800;font-size:15px;padding:18px;border-radius:999px;">QUERO PROTEGER MEU SALÃO →</a>
+        <p style="font-size:12px;color:#8a897a;margin:14px 0 0;">Pagamento único. Acesso imediato. Pix ou cartão.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- OFFER -->
+  <div id="oferta" style="background:#23261a;padding:90px 6vw;text-align:center;">
+    <div style="display:flex;gap:24px;flex-wrap:wrap;justify-content:center;align-items:stretch;max-width:900px;margin:0 auto;">
+    <div style="flex:1 1 320px;max-width:420px;background:#fff;border-radius:18px;padding:38px 32px;box-shadow:0 20px 50px rgba(0,0,0,0.3);">
+      <img src="assets/logo-ms.png" alt="Mônica Sanseverino" style="height:36px;margin:0 auto 22px;display:block;">
+      <div style="display:flex;flex-direction:column;gap:12px;text-align:left;margin-bottom:26px;">
+        <div style="display:flex;gap:10px;align-items:center;"><span style="color:#2e9e6b;font-weight:800;">✓</span><span style="font-size:14px;color:#2a2a1f;">E-book completo, pronto para uso</span></div>
+        <div style="display:flex;gap:10px;align-items:center;"><span style="color:#2e9e6b;font-weight:800;">✓</span><span style="font-size:14px;color:#2a2a1f;">Modelos de documentos e orientações práticas</span></div>
+        <div style="display:flex;gap:10px;align-items:center;"><span style="color:#2e9e6b;font-weight:800;">✓</span><span style="font-size:14px;color:#2a2a1f;">Acesso imediato</span></div>
+      </div>
+      <a href="https://pay.kiwify.com.br/cHtF8x8" style="display:block;text-decoration:none;background:#c9a24d;color:#23261a;font-weight:800;font-size:15px;padding:18px;border-radius:999px;margin-bottom:14px;">QUERO PROTEGER MEU SALÃO</a>
+      <p style="font-size:12px;color:#8a897a;margin:0;">Pagamento seguro • Acesso liberado após a confirmação da compra</p>
+    </div>
+
+    <div style="flex: 1 1 320px; max-width: 420px; background: #2f331f; border-radius: 14px; padding: 26px 28px; text-align: left; border-left: 3px solid #d64545; align-self: stretch; width: 440px; height: 299px">
+      <p style="font-size:14px;font-weight:700;color:#e8a4a4;margin:0 0 8px;text-transform:uppercase;letter-spacing:0.05em;">O custo de não ter isso pronto</p>
+      <p style="font-size:15px;line-height:1.7;color:#cfc6ad;margin:0;">Um único processo trabalhista por vínculo mal caracterizado ou uma advertência aplicada sem respaldo pode custar ao seu salão muito mais do que o valor deste material — em indenização, honorários e tempo parado resolvendo problema que já poderia estar prevenido.</p>
+    </div>
+    </div>
+
+    <div style="margin-top:56px;">
+      <p style="font-family:'Playfair Display',serif;font-size:24px;color:#c9a24d;margin:0 0 14px;">Garantia de 7 dias</p>
+      <p style="max-width:640px;margin:0 auto;font-size:15px;line-height:1.7;color:#cfc6ad;">Você tem 7 dias completos para acessar o material, aplicar os documentos e sentir a diferença na rotina do seu salão. Se, por qualquer motivo, achar que não valeu a pena, basta enviar um e-mail — devolvemos 100% do valor investido.</p>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div style="max-width:820px;margin:0 auto;padding:80px 6vw;">
+    <h2 style="font-family:'Playfair Display',serif;font-size:34px;text-align:center;margin:0 0 36px;">Perguntas Frequentes</h2>
+    <div style="display:flex;flex-direction:column;gap:12px;">
+      <sc-for list="{{ faq }}" as="item" hint-placeholder-count="5">
+        <div style="background:#fff;border-radius:14px;padding:20px 22px;box-shadow:0 2px 10px rgba(35,38,26,0.06);cursor:pointer;" onClick="{{ item.toggle }}">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;">
+            <span style="font-size:15px;font-weight:700;color:#201f16;">{{ item.pergunta }}</span>
+            <span style="flex:none;color:#c9a24d;font-weight:800;font-size:18px;">{{ item.simbolo }}</span>
+          </div>
+          <sc-if value="{{ item.aberto }}" hint-placeholder-val="{{ false }}">
+            <p style="font-size:14px;line-height:1.6;color:#6b6a5c;margin:14px 0 0;">{{ item.resposta }}</p>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="background:#1a1c12;padding:50px 6vw;text-align:center;">
+    <img src="assets/logo-ms.png" alt="Mônica Sanseverino" style="height:38px;margin:0 auto 18px;display:block;opacity:0.9;">
+    <p style="font-size:13px;color:#8a897a;margin:0 0 6px;">Mônica Sanseverino — Advocacia Estratégica</p>
+    <p style="font-size:12px;color:#5c5b4d;margin:0;">Este material tem caráter informativo e não substitui a consulta a um advogado para o seu caso específico.</p>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;tituloDor&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Cada dia sem esses documentos é um risco que seu salão está correndo&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { faqOpen: 0 };
+
+  renderVals() {
+    const faqData = [
+      { pergunta: "O material diferencia equipe CLT de prestadores MEI?", resposta: "Sim, e esse é um dos pontos centrais do POP. Cada rotina — jornada, banco de horas, controle de presença — é tratada de forma distinta para empregados CLT e para prestadores MEI, justamente para reduzir o risco de a Justiça reconhecer vínculo empregatício com quem atua como autônomo no seu espaço." },
+      { pergunta: "Os documentos já vêm prontos ou preciso escrever tudo?", resposta: "Prontos. O acordo de banco de horas e o modelo de advertência disciplinar já vêm redigidos com base na CLT — você só preenche os dados do salão e do colaborador." },
+      { pergunta: "Preciso ter conhecimento jurídico para aplicar?", resposta: "Não. O material traz checklists, fluxos e um guia de situações organizados por categoria (jornada, atendimento, conduta, sigilo, caixa e mais), pensados para quem toca o salão no dia a dia." },
+      { pergunta: "Como sei se devo orientar verbalmente, advertir ou suspender?", resposta: "O POP traz um fluxo de gravidade (baixa, média, alta e gravíssima) que indica a medida recomendada para cada tipo de ocorrência, e sinaliza os casos que exigem consulta prévia ao escritório jurídico." },
+      { pergunta: "Serve para clínicas de estética, barbearia e espaços de massoterapia também?", resposta: "Sim. O material foi escrito para salões de beleza, clínicas de estética, espaços de massoterapia, barbearias e estúdios de manicure/podologia que combinam equipe CLT e prestadores MEI." }
+    ];
+
+    var self = this;
+
+    var sumarioTitles = [
+      "Estrutura da equipe: papéis de CLT e prestadores MEI",
+      "POP da Gerente, da Recepcionista e da Copeira",
+      "Fluxo de responsabilidades por atividade",
+      "Controle de jornada e banco de horas, passo a passo",
+      "Acordo escrito para adoção de banco de horas (modelo)",
+      "Treinamento para aplicação de advertências",
+      "Guia de situações que devem ser comunicadas à gerência",
+      "Modelo pronto de advertência disciplinar",
+      "Fluxo de medidas disciplinares por gravidade",
+      "Mapa mental com a visão geral do POP"
+    ];
+    var sumarioList = [];
+    for (var s = 0; s < sumarioTitles.length; s++) {
+      sumarioList.push({ texto: sumarioTitles[s], numero: s + 1 });
+    }
+
+    var faqList = [];
+    for (var i = 0; i < faqData.length; i++) {
+      (function(f, idx) {
+        var isOpen = self.state.faqOpen === idx;
+        faqList.push({
+          pergunta: f.pergunta,
+          resposta: f.resposta,
+          aberto: isOpen,
+          simbolo: isOpen ? "-" : "+",
+          toggle: function() {
+            self.setState(function(s2) { return { faqOpen: s2.faqOpen === idx ? -1 : idx }; });
+          }
+        });
+      })(faqData[i], i);
+    }
+
+    return {
+      tituloDor: this.props.tituloDor ?? "Cada dia sem esses documentos é um risco que seu salão está correndo",
+      problemas: [
+        "Não sabe se pode tratar suas cabeleireiras, manicures e esteticistas como MEI sem correr o risco de a Justiça reconhecer vínculo empregatício.",
+        "Nunca formalizou o banco de horas da equipe CLT e não sabe se o que faz hoje tem validade jurídica.",
+        "Já ficou em dúvida sobre advertir uma funcionária por atraso, atendimento ruim ou uso de celular — e não teve um documento para aplicar.",
+        "Não tem um critério claro para saber quando orientar verbalmente, advertir por escrito, suspender ou consultar um advogado.",
+        "Sente que a organização do salão depende só da sua memória, sem processo escrito para gerente, recepção e copeira.",
+        "Teme que a rotatividade de funcionárias faça o salão perder padrão de atendimento sem um processo documentado para treinar rápido quem entra."
+      ],
+      pilares: [
+        { glifo: "§", texto: "POP completo de Gerente, Recepcionista e Copeira, com checklists de abertura, expediente e fechamento." },
+        { glifo: "⏱", texto: "Procedimento de controle de jornada e banco de horas, com acordo escrito pronto com base no art. 59 da CLT." },
+        { glifo: "!", texto: "Guia de situações que devem virar advertência, organizado por categoria: jornada, atendimento, conduta, sigilo, caixa e mais." },
+        { glifo: "✓", texto: "Modelo de advertência disciplinar e fluxo de gravidade prontos, para aplicar com segurança na hora certa." }
+      ],
+      cenarios: [
+        "Atraso frequente ou saída antecipada sem autorização.",
+        "Atendimento inadequado ou discussão com cliente.",
+        "Uso excessivo de celular durante o expediente.",
+        "Descumprimento do checklist e dos procedimentos internos.",
+        "Divergência de caixa ou quebra de sigilo de dados de clientes."
+      ],
+      contras: [
+        "Modelos genéricos, iguais para qualquer segmento",
+        "Não diferencia equipe CLT de prestadores MEI",
+        "Você precisa criar sozinha os critérios de advertência",
+        "Sem base legal explicada — só cláusulas para copiar"
+      ],
+      prosItems: [
+        "POP específico para gerente, recepção e copeira de salão",
+        "Separa claramente o que é CLT e o que é MEI, reduzindo risco de vínculo",
+        "Fluxo de gravidade pronto: quando orientar, advertir ou suspender",
+        "Cada modelo fundamentado na CLT, pronto para preencher e aplicar"
+      ],
+      valorItens: [
+        { nome: "E-book completo POP Salão de Beleza, com todos os modelos", valor: "R$ 47,00" },
+        { nome: "Modelos de contrato, descritivos de função e termos", valor: "R$ 27,00" },
+        { nome: "Cartas de advertência e suspensão prontas", valor: "R$ 15,00" },
+        { nome: "Fluxo de gravidade e guia prático de aplicação", valor: "R$ 8,00" }
+      ],
+      sumario: sumarioList,
+      faq: faqList
+    };
+  }
+}
+</script>
+</body>
+</html>
